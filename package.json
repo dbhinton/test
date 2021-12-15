@@ -1,0 +1,49 @@
+{
+  "name": "hunts-photo-app",
+  "version": "1.0.0",
+  "description": "Hunt's Photo App",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dataImport": "node backend/seeder",
+    "dataDestroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbhinton/hunts-photo-app.git"
+  },
+  "author": "David Hinton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbhinton/hunts-photo-app/issues"
+  },
+  "homepage": "https://github.com/dbhinton/hunts-photo-app#readme",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.44.0",
+    "aws-sdk": "^2.1046.0",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.0",
+    "multer": "^1.4.4",
+    "path": "^0.12.7",
+    "underscore": "^1.13.1",
+    "uuid": "^8.3.2",
+    "uuidv4": "^6.2.12"
+  },
+  "devDependencies": {
+    "concurrently": "^6.4.0",
+    "mocha": "^9.1.3",
+    "nodemon": "^2.0.15"
+  },
+  "keywords": []
+}
